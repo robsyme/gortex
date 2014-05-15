@@ -39,8 +39,10 @@ type cortexHeaderTop struct {
 type simpleKmer struct {
 	BinaryKmer uint64
 	Coverages  [3]uint32
-	Edges      [3]byte
+	Edges      [3]edge
 }
+
+type edge byte
 
 func (kmer *simpleKmer) nucs(k uint) []byte {
 	nucs := make([]byte, k)
@@ -59,6 +61,160 @@ func (kmer *simpleKmer) nucs(k uint) []byte {
 		mask = mask >> 2
 	}
 	return nucs
+}
+
+func (kmer *simpleKmer) reverse_nucs(k uint) []byte {
+	nucs := make([]byte, k)
+	mask := uint64(3)
+	for i := uint(0); i < k; i++ {
+		switch mask & kmer.BinaryKmer >> (2 * i) {
+		case 0:
+			nucs[i] = 'A'
+		case 1:
+			nucs[i] = 'C'
+		case 2:
+			nucs[i] = 'G'
+		case 3:
+			nucs[i] = 'T'
+		}
+		mask = mask << 2
+	}
+	return nucs
+}
+
+func AppendIfMissing(slice []byte, c byte) []byte {
+	for _, ele := range slice {
+		if ele == c {
+			return slice
+		}
+	}
+	return append(slice, c)
+}
+
+func (kmer simpleKmer) String() string {
+	var b bytes.Buffer
+	outgoing_edges := make([]byte, 0)
+	for _, edges := range kmer.Outgoing() {
+		for _, edge := range edges {
+			outgoing_edges = AppendIfMissing(outgoing_edges, edge)
+		}
+	}
+
+	for _, edge := range outgoing_edges {
+		fmt.Fprintf(&b, "%s\t%c\n", kmer.nucs(21), edge)
+	}
+	return b.String()
+}
+
+func (kmer *simpleKmer) Incoming() [][]byte {
+	incoming := make([][]byte, len(kmer.Edges))
+	for i, v := range kmer.Edges {
+		incoming[i] = v.incoming()
+	}
+	return incoming
+}
+
+func (kmer *simpleKmer) Outgoing() [][]byte {
+	outgoing := make([][]byte, len(kmer.Edges))
+	for i, v := range kmer.Edges {
+		outgoing[i] = v.outgoing()
+	}
+	return outgoing
+}
+
+func (kmer *simpleKmer) PrintForColex() {
+	var b bytes.Buffer
+	outgoing_edges := make([]byte, 0)
+	for _, edges := range kmer.Outgoing() {
+		for _, edge := range edges {
+			outgoing_edges = AppendIfMissing(outgoing_edges, edge)
+		}
+	}
+
+	for _, edge := range outgoing_edges {
+		fmt.Fprintf(&b, "%s\t%c\n", kmer.reverse_nucs(21), edge)
+	}
+
+	if kmer.hasNoIncoming() {
+		root := make([]byte, 21)
+		for i := range root {
+			root[i] = '$'
+		}
+		nucs := kmer.reverse_nucs(21)
+		for i := 1; i <= 21; i++ {
+			fmt.Printf("%s%s\t%c\n", nucs[i:], root[0:i], nucs[i-1])
+		}
+	}
+
+	fmt.Print(b.String())
+}
+
+func (kmer simpleKmer) hasNoIncoming() bool {
+	for _, edge := range kmer.Edges {
+		masked := (edge & 0xF0) >> 4
+		if masked > 0 {
+			return false
+		}
+	}
+	return true
+}
+
+func (e edge) incoming() []byte {
+	masked := (e & 0xF0) >> 4
+	count := 0
+	for i := uint(0); i < 4; i++ {
+		if masked>>i%2 == 1 {
+			count += 1
+		}
+	}
+
+	edges := make([]byte, count)
+	j := 0
+	for i := uint8(0); i < 4; i++ {
+		if masked>>i%2 == 1 {
+			switch i {
+			case 0:
+				edges[j] = 'T'
+			case 1:
+				edges[j] = 'G'
+			case 2:
+				edges[j] = 'C'
+			case 3:
+				edges[j] = 'A'
+			}
+			j++
+		}
+	}
+	return edges
+}
+
+func (e edge) outgoing() []byte {
+	masked := e & 0x0F
+	count := 0
+	for i := uint(0); i < 4; i++ {
+		if masked>>i%2 == 1 {
+			count += 1
+		}
+	}
+
+	edges := make([]byte, count)
+	j := 0
+	for i := uint8(0); i < 4; i++ {
+		if masked>>i%2 == 1 {
+			switch i {
+			case 0:
+				edges[j] = 'T'
+			case 1:
+				edges[j] = 'G'
+			case 2:
+				edges[j] = 'C'
+			case 3:
+				edges[j] = 'A'
+			}
+			j++
+		}
+	}
+	return edges
 }
 
 func ReadHeader(r io.Reader) CortexHeader {
@@ -172,11 +328,10 @@ func main() {
 	fi, _ := os.Open("test/data/all_colours.ctx")
 	defer fi.Close()
 	r := bufio.NewReader(fi)
-	header := ReadHeader(r)
-	k := header.top.KmerSize
+	ReadHeader(r)
 	var kmer simpleKmer
 	for err := binary.Read(r, binary.LittleEndian, &kmer); err == nil; {
-		fmt.Println(string(kmer.nucs(uint(k))))
+		kmer.PrintForColex()
 		err = binary.Read(r, binary.LittleEndian, &kmer)
 	}
 }

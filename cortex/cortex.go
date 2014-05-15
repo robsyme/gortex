@@ -171,6 +171,11 @@ func (bin *CortexVarBinary) KmerNucleotides(kmer Kmer) string {
 	return string(nucs[:])
 }
 
+func (bin *CortexVarBinary) KmerNucleotidesReverse(kmer Kmer) string {
+	nucs := kmer.reverse_nucleotides(bin.KmerSize)
+	return string(nucs[:])
+}
+
 type edges byte
 
 type Kmer struct {
@@ -186,21 +191,98 @@ func NewKmer(wordsPerKmer, colourCount uint32) (kmer Kmer) {
 	return kmer
 }
 
-func (kmer *Kmer) nucleotides(k uint32) []byte {
-	nucs := make([]byte, k)
-	mask := uint64(3 << (k*2 - 2))
-	for i := uint32(0); i < k; i++ {
-		switch mask & kmer.BinaryKmer[0] >> ((k - 1 - i) * 2) {
-		case 0:
-			nucs[i] = 'A'
-		case 1:
-			nucs[i] = 'C'
-		case 2:
-			nucs[i] = 'G'
-		case 3:
-			nucs[i] = 'T'
+func NewKmerFromSequence(seq string) Kmer {
+	var kmer Kmer
+	k := len(seq)
+	base := make([]uint64, (len(seq)-1)/32+1)
+
+	for i, c := range seq {
+		wordIndex := (k - i - 1) / 32
+		switch c {
+		case 'A':
+			base[wordIndex] = base[wordIndex]<<2 | 0
+		case 'C':
+			base[wordIndex] = base[wordIndex]<<2 | 1
+		case 'G':
+			base[wordIndex] = base[wordIndex]<<2 | 2
+		case 'T':
+			base[wordIndex] = base[wordIndex]<<2 | 3
 		}
-		mask = mask >> 2
+	}
+
+	kmer.BinaryKmer = base
+	return kmer
+}
+
+func (kmer *Kmer) Equals(other Kmer) bool {
+	for i, v := range kmer.BinaryKmer {
+		if v != other.BinaryKmer[i] {
+			return false
+		}
+	}
+	return true
+}
+
+func (kmer *Kmer) nucleotides(k uint32) []byte {
+	//fmt.Printf("GENERATING NEW NUCS, k=%d\n", k)
+	nucs := make([]byte, k)
+	for i := k; i > 0; i-- {
+		j := (i - 1) % 32
+		wordIndex := (i - 1) / 32
+		mask := uint64(3 << (2 * j))
+		// fmt.Printf("i=%d, j=%d k-1=%d\n", i, j, k-i)
+		// fmt.Printf("mask:   %064b\n", mask)
+		// fmt.Printf("binary: %064b\n\n", kmer.BinaryKmer[wordIndex])
+		switch mask & kmer.BinaryKmer[wordIndex] >> (j * 2) {
+		case 0:
+			nucs[k-i] = 'A'
+		case 1:
+			nucs[k-i] = 'C'
+		case 2:
+			nucs[k-i] = 'G'
+		case 3:
+			nucs[k-i] = 'T'
+		}
+	}
+	return nucs
+}
+
+func (kmer *Kmer) reverse_nucleotides(k uint32) []byte {
+	nucs := make([]byte, k)
+	for i := k; i > 0; i-- {
+		j := (i - 1) % 32
+		wordIndex := (i - 1) / 32
+		mask := uint64(3 << (2 * j))
+		switch mask & kmer.BinaryKmer[wordIndex] >> (j * 2) {
+		case 0:
+			nucs[i-1] = 'A'
+		case 1:
+			nucs[i-1] = 'C'
+		case 2:
+			nucs[i-1] = 'G'
+		case 3:
+			nucs[i-1] = 'T'
+		}
+	}
+	return nucs
+}
+
+func (kmer *Kmer) reverse_nucleotides2(k uint32) []byte {
+	nucs := make([]byte, k)
+	for i := uint32(0); i < k; i++ {
+		j := i % 32
+		mask := uint64(3 << (j * 2))
+		wordIndex := (k - i - 1) / 32
+		switch mask & kmer.BinaryKmer[wordIndex] >> (2 * j) {
+		case 0:
+			nucs[k-i-1] = 'A'
+		case 1:
+			nucs[k-i-1] = 'C'
+		case 2:
+			nucs[k-i-1] = 'G'
+		case 3:
+			nucs[k-i-1] = 'T'
+		}
 	}
 	return nucs
 }
