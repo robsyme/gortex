@@ -8,47 +8,7 @@ import (
 
 func TestReadingBinaries(t *testing.T) {
 
-	Convey("Subject: Opening the binary", t, func() {
-
-		Convey("Given a non-existant cortex binary file", func() {
-			filename := "../test/data/bad_binaries/non-existant.ctx"
-
-			Convey("When opened", func() {
-				_, err := Open(filename)
-
-				Convey("It should return an error", func() {
-					So(err, ShouldNotBeNil)
-					So(os.IsNotExist(err), ShouldBeTrue)
-				})
-
-			})
-
-		})
-
-		Convey("Given a cortex binary with corrupted magic string", func() {
-			filename := "../test/data/bad_binaries/bad_magic_string.ctx"
-
-			Convey("When opened", func() {
-				_, err := Open(filename)
-
-				Convey("It should return an err", func() {
-					So(err, ShouldNotBeNil)
-				})
-			})
-		})
-
-		Convey("Given a cortex binary with a missing byte in the header", func() {
-			filename := "../test/data/bad_binaries/missing_byte.ctx"
-
-			Convey("When opened", func() {
-				_, err := Open(filename)
-
-				Convey("It should return an err", func() {
-					So(err, ShouldNotBeNil)
-				})
-			})
-		})
-
+	Convey("Subject: Operating on kmers", t, func() {
 		Convey("Given two kmers that represent the same node", func() {
 			kmer1 := Kmer{
 				BinaryKmer: []uint64{857198321847},
@@ -88,10 +48,13 @@ func TestReadingBinaries(t *testing.T) {
 				So(string(rev_nucs), ShouldEqual, reverse(seq))
 			})
 
+			Convey("We should be able to calculate the bitsting of the incoming nodes", func() {
+				kmer.ColouredEdges = []edges{edges(4), edges(5), edges(6)}
+			})
 		})
 
 		Convey("Given a kmer wih large values for k", func() {
-			seq := "TCCGTTTTTTTTTTTTTTTGATCGTATGCGTTTTTTTTGACGTATGCATGCTGACTGATCGATGCTGACTT"
+			seq := "TCCGTTTTTTTTATGCATGCATGCTTGATCGTATGCGTTTTTTTTGACGTATGCATGCTGACTGATCGATGCTGACTT"
 			k := uint32(len(seq))
 
 			kmer := NewKmerFromSequence(seq)
@@ -102,11 +65,78 @@ func TestReadingBinaries(t *testing.T) {
 				So(string(rev_nucs), ShouldEqual, reverse(seq))
 			})
 
-			Convey("We should be able to calculate the bitsting of the incoming nodes", func() {
-				kmer.ColouredEdges = make([]edges, 1)
-				kmer.ColouredEdges[0] = edges(2)
+		})
+
+		Convey("Given a kmer with incoming and outgoing nodes", func() {
+			seq := "TATTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTGT"
+			k := uint32(len(seq))
+			kmer := NewKmerFromSequence(seq)
+			kmer.ColouredEdges = []edges{
+				edges(0xA4), // tc -> seq -> c
+				edges(0xC2)} // tg -> seq -> g
+
+			Convey("It should be able to generate the kmers for prev and next nodes", func() {
+				leftKmers := kmer.LeftKmers(k)
+				So(len(leftKmers), ShouldEqual, 3)
+				leftKmerC := NewKmerFromSequence("C" + seq[:len(seq)-1])
+				leftKmerG := NewKmerFromSequence("G" + seq[:len(seq)-1])
+				leftKmerT := NewKmerFromSequence("T" + seq[:len(seq)-1])
+				So(leftKmers[0].Equals(leftKmerC), ShouldBeTrue)
+				So(leftKmers[1].Equals(leftKmerG), ShouldBeTrue)
+				So(leftKmers[2].Equals(leftKmerT), ShouldBeTrue)
+
+				rightKmers := kmer.RightKmers(k)
+				So(len(rightKmers), ShouldEqual, 2)
+				So(string(rightKmers[0].nucleotides(k)[:]), ShouldEqual, seq[1:]+"G")
+				So(string(rightKmers[1].nucleotides(k)[:]), ShouldEqual, seq[1:]+"C")
+				rightKmerG := NewKmerFromSequence(seq[1:] + "G")
+				rightKmerC := NewKmerFromSequence(seq[1:] + "C")
+				So(rightKmers[0].Equals(rightKmerG), ShouldBeTrue)
+				So(rightKmers[1].Equals(rightKmerC), ShouldBeTrue)
+			})
+		})
+
+	})
+
+	Convey("Subject: Opening cortex_var binaries", t, func() {
+
+		Convey("Given a non-existant cortex binary file", func() {
+			filename := "../test/data/bad_binaries/non-existant.ctx"
+
+			Convey("When opened", func() {
+				_, err := Open(filename)
+
+				Convey("It should return an error", func() {
+					So(err, ShouldNotBeNil)
+					So(os.IsNotExist(err), ShouldBeTrue)
+				})
+
 			})
 
+		})
+
+		Convey("Given a cortex binary with corrupted magic string", func() {
+			filename := "../test/data/bad_binaries/bad_magic_string.ctx"
+
+			Convey("When opened", func() {
+				_, err := Open(filename)
+
+				Convey("It should return an err", func() {
+					So(err, ShouldNotBeNil)
+				})
+			})
+		})
+
+		Convey("Given a cortex binary with a missing byte in the header", func() {
+			filename := "../test/data/bad_binaries/missing_byte.ctx"
+
+			Convey("When opened", func() {
+				_, err := Open(filename)
+
+				Convey("It should return an err", func() {
+					So(err, ShouldNotBeNil)
+				})
+			})
 		})
 
 		Convey("Given a correct cortex binary file", func() {

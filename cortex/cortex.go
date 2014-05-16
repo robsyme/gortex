@@ -158,8 +158,7 @@ func (bin *CortexVarBinary) hasMagicString() bool {
 	var magicString [6]byte
 	bin.Read(&magicString)
 
-	expected := [6]byte{'C', 'O', 'R', 'T', 'E', 'X'}
-	if magicString != expected {
+	if magicString != [6]byte{'C', 'O', 'R', 'T', 'E', 'X'} {
 		return false
 	}
 
@@ -224,15 +223,11 @@ func (kmer *Kmer) Equals(other Kmer) bool {
 }
 
 func (kmer *Kmer) nucleotides(k uint32) []byte {
-	//fmt.Printf("GENERATING NEW NUCS, k=%d\n", k)
 	nucs := make([]byte, k)
 	for i := k; i > 0; i-- {
 		j := (i - 1) % 32
 		wordIndex := (i - 1) / 32
 		mask := uint64(3 << (2 * j))
-		// fmt.Printf("i=%d, j=%d k-1=%d\n", i, j, k-i)
-		// fmt.Printf("mask:   %064b\n", mask)
-		// fmt.Printf("binary: %064b\n\n", kmer.BinaryKmer[wordIndex])
 		switch mask & kmer.BinaryKmer[wordIndex] >> (j * 2) {
 		case 0:
 			nucs[k-i] = 'A'
@@ -267,24 +262,82 @@ func (kmer *Kmer) reverse_nucleotides(k uint32) []byte {
 	return nucs
 }
 
-func (kmer *Kmer) reverse_nucleotides2(k uint32) []byte {
-	nucs := make([]byte, k)
-	for i := uint32(0); i < k; i++ {
-		j := i % 32
-		mask := uint64(3 << (j * 2))
-		wordIndex := (k - i - 1) / 32
-		switch mask & kmer.BinaryKmer[wordIndex] >> (2 * j) {
-		case 0:
-			nucs[k-i-1] = 'A'
-		case 1:
-			nucs[k-i-1] = 'C'
-		case 2:
-			nucs[k-i-1] = 'G'
-		case 3:
-			nucs[k-i-1] = 'T'
+func (kmer *Kmer) allEdges() (all edges) {
+	all = edges(0)
+	for _, edges := range kmer.ColouredEdges {
+		all = all | edges
+	}
+	return all
+}
+
+func (kmer *Kmer) LeftKmers(k uint32) []Kmer {
+	wordCount := len(kmer.BinaryKmer)
+
+	// Shift the existing bitsting to the right
+	shiftedBinaryKmer := make([]uint64, wordCount)
+	mem := uint64(0)
+	for i := range kmer.BinaryKmer {
+		bitString := kmer.BinaryKmer[wordCount-i-1]
+		shiftedBinaryKmer[wordCount-i-1] = (bitString >> 2) | (mem << 62)
+		mem = bitString & 3
+	}
+
+	allEdges := kmer.allEdges()
+	baseBytes := []uint64{
+		uint64(0), // A
+		uint64(1), // C
+		uint64(2), // G
+		uint64(3), // T
+	}
+
+	incomingKmers := make([]Kmer, 0)
+	for i, bits := range baseBytes {
+		if allEdges>>(4+uint(i))%2 == 1 {
+			newKmer := Kmer{BinaryKmer: make([]uint64, wordCount)}
+			copy(newKmer.BinaryKmer, shiftedBinaryKmer)
+			newKmer.BinaryKmer[wordCount-1] = shiftedBinaryKmer[wordCount-1] | bits<<((k%32-1)*2)
+			incomingKmers = append(incomingKmers, newKmer)
 		}
 	}
-	return nucs
+	return incomingKmers
+}
+
+func (kmer *Kmer) RightKmers(k uint32) []Kmer {
+	wordCount := len(kmer.BinaryKmer)
+
+	// Shift the existing bits to the left
+	shiftedBinaryKmer := make([]uint64, wordCount)
+	mem := uint64(0)
+	for i := range kmer.BinaryKmer {
+		bitString := kmer.BinaryKmer[i]
+		shiftedBinaryKmer[i] = (bitString << 2) | (mem >> 62)
+		mem = (bitString & 0xC000000000000000)
+	}
+
+	// Clean up the two bits now hanging on the left-hand edge of
+	// the bitstring.
+	shiftedBinaryKmer[wordCount-1] = shiftedBinaryKmer[wordCount-1] & (1<<((k%32)*2) - 1)
+
+	allEdges := kmer.allEdges()
+	baseBytes := []uint64{
+		uint64(3), // T
+		uint64(2), // G
+		uint64(1), // C
+		uint64(0), // A
+	}
+
+	outGoingKmers := make([]Kmer, 0)
+
+	for i, bits := range baseBytes {
+		if allEdges>>uint(i)%2 == 1 {
+			newKmer := Kmer{BinaryKmer: make([]uint64, wordCount)}
+			copy(newKmer.BinaryKmer, shiftedBinaryKmer)
+			newKmer.BinaryKmer[0] = shiftedBinaryKmer[0] | bits
+			outGoingKmers = append(outGoingKmers, newKmer)
+		}
+	}
+
+	return outGoingKmers
 }
 
 func Open(filename string) (binary CortexVarBinary, err error) {
@@ -306,6 +359,9 @@ func Open(filename string) (binary CortexVarBinary, err error) {
 	if headerErr != nil {
 		return bin, headerErr
 	}
+
+	// Let's remember where the kmers start so that we can quickly
+	// rewind if we have to.
 
 	bin.kmerStartFileOffset, _ = fi.Seek(0, os.SEEK_CUR)
 
