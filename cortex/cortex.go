@@ -5,7 +5,9 @@ import (
 	"bytes"
 	"encoding/binary"
 	"errors"
+	"fmt"
 	"io"
+	"math/big"
 	"os"
 )
 
@@ -34,34 +36,7 @@ type CortexVarBinary struct {
 }
 
 func (bin *CortexVarBinary) Read(data interface{}) error {
-	err := binary.Read(bin.reader, binary.LittleEndian, data)
-	return err
-}
-
-func (bin *CortexVarBinary) NextKmer() (Kmer, error) {
-	kmer := NewKmer(bin.wordsPerKmer, bin.ColourCount)
-
-	for i := uint32(0); i < bin.wordsPerKmer; i++ {
-		err := bin.Read(&kmer.BinaryKmer[i])
-		if err != nil {
-			return kmer, err
-		}
-	}
-
-	for i := range bin.Colours {
-		err := bin.Read(&kmer.Coverages[i])
-		if err != nil {
-			return kmer, err
-		}
-	}
-	for i := range bin.Colours {
-		err := bin.Read(&kmer.ColouredEdges[i])
-		if err != nil {
-			return kmer, err
-		}
-	}
-
-	return kmer, nil
+	return binary.Read(bin.reader, binary.LittleEndian, data)
 }
 
 func (bin *CortexVarBinary) readHeader() error {
@@ -178,48 +153,48 @@ func (bin *CortexVarBinary) KmerNucleotidesReverse(kmer Kmer) string {
 type edges byte
 
 type Kmer struct {
+	bits          *KmerBits
 	BinaryKmer    []uint64
 	Coverages     []uint32
 	ColouredEdges []edges
 }
 
-func NewKmer(wordsPerKmer, colourCount uint32) (kmer Kmer) {
-	kmer.BinaryKmer = make([]uint64, wordsPerKmer)
-	kmer.Coverages = make([]uint32, colourCount)
-	kmer.ColouredEdges = make([]edges, colourCount)
-	return kmer
+func NewKmer() (kmer Kmer) {
+	return Kmer{bits: NewKmerBits()}
 }
 
 func NewKmerFromSequence(seq string) Kmer {
-	var kmer Kmer
-	k := len(seq)
-	base := make([]uint64, (len(seq)-1)/32+1)
-
-	for i, c := range seq {
-		wordIndex := (k - i - 1) / 32
-		switch c {
-		case 'A':
-			base[wordIndex] = base[wordIndex]<<2 | 0
+	kmer := NewKmer()
+	var tmpByte byte
+	var b bytes.Buffer
+	for i, v := range seq {
+		switch v {
 		case 'C':
-			base[wordIndex] = base[wordIndex]<<2 | 1
+			newBits := byte(1) << (6 - (uint(i%4) * 2))
+			tmpByte = tmpByte | newBits
 		case 'G':
-			base[wordIndex] = base[wordIndex]<<2 | 2
+			newBits := byte(2) << (6 - (uint(i%4) * 2))
+			tmpByte = tmpByte | newBits
 		case 'T':
-			base[wordIndex] = base[wordIndex]<<2 | 3
+			newBits := byte(3) << (6 - (uint(i%4) * 2))
+			tmpByte = tmpByte | newBits
+		}
+		if i%4 == 3 {
+			b.WriteByte(tmpByte)
+			tmpByte = 0
 		}
 	}
-
-	kmer.BinaryKmer = base
+	b.WriteByte(tmpByte)
+	kmer.bits.SetBytes(b.Bytes())
 	return kmer
 }
 
-func (kmer *Kmer) Equals(other Kmer) bool {
-	for i, v := range kmer.BinaryKmer {
-		if v != other.BinaryKmer[i] {
-			return false
-		}
-	}
-	return true
+func (kmer *Kmer) Cmp(other *Kmer) int {
+	return other.bits.Int.Cmp(kmer.bits.Int)
+}
+
+func (kmer *Kmer) Nucleotides() string {
+	return "fail"
 }
 
 func (kmer *Kmer) nucleotides(k uint32) []byte {
@@ -338,6 +313,14 @@ func (kmer *Kmer) RightKmers(k uint32) []Kmer {
 	}
 
 	return outGoingKmers
+}
+
+type KmerBits struct {
+	*big.Int
+}
+
+func NewKmerBits() *KmerBits {
+	return &KmerBits{big.NewInt(0)}
 }
 
 func Open(filename string) (binary CortexVarBinary, err error) {
