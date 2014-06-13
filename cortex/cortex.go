@@ -5,7 +5,7 @@ import (
 	"bytes"
 	"encoding/binary"
 	"errors"
-	"fmt"
+	"github.com/robsyme/multifinder/colouredKmer"
 	"io"
 	"math/big"
 	"os"
@@ -33,6 +33,43 @@ type CortexVarBinary struct {
 	ColourCount         uint32
 	Colours             []Colour
 	kmerStartFileOffset int64
+	extraBytes          uint32
+	KmerCount           int64
+	fi                  *os.File
+}
+
+func (bin *CortexVarBinary) NextKmer() (*colouredKmer.Kmer, error) {
+	kmer := colouredKmer.Kmer{
+		Int:       big.NewInt(0),
+		Coverages: make([]uint32, bin.ColourCount),
+		Edges:     make([]uint8, bin.ColourCount),
+	}
+
+	bits := make([]uint64, bin.wordsPerKmer)
+	err := bin.Read(&bits)
+	if err != nil {
+		return &kmer, err
+	}
+	words := make([]big.Word, bin.wordsPerKmer)
+	for i, v := range bits {
+		words[i] = big.Word(v)
+	}
+	kmer.SetBits(words)
+	bin.Read(kmer.Coverages)
+	bin.Read(kmer.Edges)
+	return &kmer, nil
+}
+
+func (bin *CortexVarBinary) Kmers() chan *colouredKmer.Kmer {
+	bin.fi.Seek(bin.kmerStartFileOffset, os.SEEK_SET)
+	kc := make(chan *colouredKmer.Kmer)
+	go func() {
+		for k, err := bin.NextKmer(); err == nil; k, err = bin.NextKmer() {
+			kc <- k
+		}
+		close(kc)
+	}()
+	return kc
 }
 
 func (bin *CortexVarBinary) Read(data interface{}) error {
@@ -40,6 +77,10 @@ func (bin *CortexVarBinary) Read(data interface{}) error {
 }
 
 func (bin *CortexVarBinary) readHeader() error {
+	bin.fi.Seek(0, os.SEEK_SET)
+	// Create a buffered io.Reader object.
+	bin.reader = bufio.NewReader(bin.fi)
+
 	if !bin.hasMagicString() {
 		return errors.New("Cortex file does not have correct format.")
 	}
@@ -62,6 +103,7 @@ func (bin *CortexVarBinary) readHeader() error {
 		// How many bytes should we read before the next name?
 		var nameLength uint32
 		bin.Read(&nameLength)
+		bin.extraBytes += nameLength
 		// If we see a really long name, it probably means the
 		// file is corrupt.
 		if nameLength > 10000 {
@@ -105,6 +147,7 @@ func (bin *CortexVarBinary) readHeader() error {
 		bin.Read(&colour.LowCovKmersThreshold)
 
 		bin.Read(&nameLength)
+		bin.extraBytes += nameLength
 		// If we see a really long name, it probably means the
 		// file is corrupt.
 		if nameLength > 10000 {
@@ -132,221 +175,36 @@ func (bin *CortexVarBinary) readHeader() error {
 func (bin *CortexVarBinary) hasMagicString() bool {
 	var magicString [6]byte
 	bin.Read(&magicString)
-
 	if magicString != [6]byte{'C', 'O', 'R', 'T', 'E', 'X'} {
 		return false
 	}
-
 	return true
 }
 
-func (bin *CortexVarBinary) KmerNucleotides(kmer Kmer) string {
-	nucs := kmer.nucleotides(bin.KmerSize)
-	return string(nucs[:])
-}
-
-func (bin *CortexVarBinary) KmerNucleotidesReverse(kmer Kmer) string {
-	nucs := kmer.reverse_nucleotides(bin.KmerSize)
-	return string(nucs[:])
-}
-
-type edges byte
-
-type Kmer struct {
-	bits          *KmerBits
-	BinaryKmer    []uint64
-	Coverages     []uint32
-	ColouredEdges []edges
-}
-
-func NewKmer() (kmer Kmer) {
-	return Kmer{bits: NewKmerBits()}
-}
-
-func NewKmerFromSequence(seq string) Kmer {
-	kmer := NewKmer()
-	var tmpByte byte
-	var b bytes.Buffer
-	for i, v := range seq {
-		switch v {
-		case 'C':
-			newBits := byte(1) << (6 - (uint(i%4) * 2))
-			tmpByte = tmpByte | newBits
-		case 'G':
-			newBits := byte(2) << (6 - (uint(i%4) * 2))
-			tmpByte = tmpByte | newBits
-		case 'T':
-			newBits := byte(3) << (6 - (uint(i%4) * 2))
-			tmpByte = tmpByte | newBits
-		}
-		if i%4 == 3 {
-			b.WriteByte(tmpByte)
-			tmpByte = 0
-		}
-	}
-	b.WriteByte(tmpByte)
-	kmer.bits.SetBytes(b.Bytes())
-	return kmer
-}
-
-func (kmer *Kmer) Cmp(other *Kmer) int {
-	return other.bits.Int.Cmp(kmer.bits.Int)
-}
-
-func (kmer *Kmer) Nucleotides() string {
-	return "fail"
-}
-
-func (kmer *Kmer) nucleotides(k uint32) []byte {
-	nucs := make([]byte, k)
-	for i := k; i > 0; i-- {
-		j := (i - 1) % 32
-		wordIndex := (i - 1) / 32
-		mask := uint64(3 << (2 * j))
-		switch mask & kmer.BinaryKmer[wordIndex] >> (j * 2) {
-		case 0:
-			nucs[k-i] = 'A'
-		case 1:
-			nucs[k-i] = 'C'
-		case 2:
-			nucs[k-i] = 'G'
-		case 3:
-			nucs[k-i] = 'T'
-		}
-	}
-	return nucs
-}
-
-func (kmer *Kmer) reverse_nucleotides(k uint32) []byte {
-	nucs := make([]byte, k)
-	for i := k; i > 0; i-- {
-		j := (i - 1) % 32
-		wordIndex := (i - 1) / 32
-		mask := uint64(3 << (2 * j))
-		switch mask & kmer.BinaryKmer[wordIndex] >> (j * 2) {
-		case 0:
-			nucs[i-1] = 'A'
-		case 1:
-			nucs[i-1] = 'C'
-		case 2:
-			nucs[i-1] = 'G'
-		case 3:
-			nucs[i-1] = 'T'
-		}
-	}
-	return nucs
-}
-
-func (kmer *Kmer) allEdges() (all edges) {
-	all = edges(0)
-	for _, edges := range kmer.ColouredEdges {
-		all = all | edges
-	}
-	return all
-}
-
-func (kmer *Kmer) LeftKmers(k uint32) []Kmer {
-	wordCount := len(kmer.BinaryKmer)
-
-	// Shift the existing bitsting to the right
-	shiftedBinaryKmer := make([]uint64, wordCount)
-	mem := uint64(0)
-	for i := range kmer.BinaryKmer {
-		bitString := kmer.BinaryKmer[wordCount-i-1]
-		shiftedBinaryKmer[wordCount-i-1] = (bitString >> 2) | (mem << 62)
-		mem = bitString & 3
-	}
-
-	allEdges := kmer.allEdges()
-	baseBytes := []uint64{
-		uint64(0), // A
-		uint64(1), // C
-		uint64(2), // G
-		uint64(3), // T
-	}
-
-	incomingKmers := make([]Kmer, 0)
-	for i, bits := range baseBytes {
-		if allEdges>>(4+uint(i))%2 == 1 {
-			newKmer := Kmer{BinaryKmer: make([]uint64, wordCount)}
-			copy(newKmer.BinaryKmer, shiftedBinaryKmer)
-			newKmer.BinaryKmer[wordCount-1] = shiftedBinaryKmer[wordCount-1] | bits<<((k%32-1)*2)
-			incomingKmers = append(incomingKmers, newKmer)
-		}
-	}
-	return incomingKmers
-}
-
-func (kmer *Kmer) RightKmers(k uint32) []Kmer {
-	wordCount := len(kmer.BinaryKmer)
-
-	// Shift the existing bits to the left
-	shiftedBinaryKmer := make([]uint64, wordCount)
-	mem := uint64(0)
-	for i := range kmer.BinaryKmer {
-		bitString := kmer.BinaryKmer[i]
-		shiftedBinaryKmer[i] = (bitString << 2) | (mem >> 62)
-		mem = (bitString & 0xC000000000000000)
-	}
-
-	// Clean up the two bits now hanging on the left-hand edge of
-	// the bitstring.
-	shiftedBinaryKmer[wordCount-1] = shiftedBinaryKmer[wordCount-1] & (1<<((k%32)*2) - 1)
-
-	allEdges := kmer.allEdges()
-	baseBytes := []uint64{
-		uint64(3), // T
-		uint64(2), // G
-		uint64(1), // C
-		uint64(0), // A
-	}
-
-	outGoingKmers := make([]Kmer, 0)
-
-	for i, bits := range baseBytes {
-		if allEdges>>uint(i)%2 == 1 {
-			newKmer := Kmer{BinaryKmer: make([]uint64, wordCount)}
-			copy(newKmer.BinaryKmer, shiftedBinaryKmer)
-			newKmer.BinaryKmer[0] = shiftedBinaryKmer[0] | bits
-			outGoingKmers = append(outGoingKmers, newKmer)
-		}
-	}
-
-	return outGoingKmers
-}
-
-type KmerBits struct {
-	*big.Int
-}
-
-func NewKmerBits() *KmerBits {
-	return &KmerBits{big.NewInt(0)}
+func (bin *CortexVarBinary) Close() {
+	bin.fi.Close()
 }
 
 func Open(filename string) (binary CortexVarBinary, err error) {
 	var bin CortexVarBinary
 
 	// Create the io.Reader
-	fi, err := os.Open(filename)
-	defer fi.Close()
-
-	// Check if the file exists and that it is readable
+	bin.fi, err = os.Open(filename)
 	if err != nil {
 		return bin, err
 	}
-
-	// Create a buffered io.Reader object.
-	bin.reader = bufio.NewReader(fi)
 
 	headerErr := bin.readHeader()
 	if headerErr != nil {
 		return bin, headerErr
 	}
 
+	fileInfo, _ := bin.fi.Stat()
+	headerSize := bin.extraBytes + 28 + 48*bin.ColourCount
+	bin.KmerCount = (fileInfo.Size() - int64(headerSize)) / 23
+
 	// Let's remember where the kmers start so that we can quickly
 	// rewind if we have to.
-
-	bin.kmerStartFileOffset, _ = fi.Seek(0, os.SEEK_CUR)
-
+	bin.kmerStartFileOffset, _ = bin.fi.Seek(0, os.SEEK_CUR)
 	return bin, nil
 }
