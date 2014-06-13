@@ -28,14 +28,14 @@ type Colour struct {
 type CortexVarBinary struct {
 	reader              io.Reader
 	Version             uint32
-	KmerSize            uint32
-	wordsPerKmer        uint32
-	ColourCount         uint32
 	Colours             []Colour
-	kmerStartFileOffset int64
-	extraBytes          uint32
+	ColourCount         uint32
 	KmerCount           int64
+	KmerSize            uint32
 	fi                  *os.File
+	wordsPerKmer        uint32
+	extraBytes          uint32
+	kmerStartFileOffset int64
 }
 
 func (bin *CortexVarBinary) NextKmer() (*colouredKmer.Kmer, error) {
@@ -46,7 +46,7 @@ func (bin *CortexVarBinary) NextKmer() (*colouredKmer.Kmer, error) {
 	}
 
 	bits := make([]uint64, bin.wordsPerKmer)
-	err := bin.Read(&bits)
+	err := bin.read(&bits)
 	if err != nil {
 		return &kmer, err
 	}
@@ -55,8 +55,8 @@ func (bin *CortexVarBinary) NextKmer() (*colouredKmer.Kmer, error) {
 		words[i] = big.Word(v)
 	}
 	kmer.SetBits(words)
-	bin.Read(kmer.Coverages)
-	bin.Read(kmer.Edges)
+	bin.read(kmer.Coverages)
+	bin.read(kmer.Edges)
 	return &kmer, nil
 }
 
@@ -72,7 +72,7 @@ func (bin *CortexVarBinary) Kmers() chan *colouredKmer.Kmer {
 	return kc
 }
 
-func (bin *CortexVarBinary) Read(data interface{}) error {
+func (bin *CortexVarBinary) read(data interface{}) error {
 	return binary.Read(bin.reader, binary.LittleEndian, data)
 }
 
@@ -85,24 +85,24 @@ func (bin *CortexVarBinary) readHeader() error {
 		return errors.New("Cortex file does not have correct format.")
 	}
 
-	bin.Read(&bin.Version)
-	bin.Read(&bin.KmerSize)
-	bin.Read(&bin.wordsPerKmer)
-	bin.Read(&bin.ColourCount)
+	bin.read(&bin.Version)
+	bin.read(&bin.KmerSize)
+	bin.read(&bin.wordsPerKmer)
+	bin.read(&bin.ColourCount)
 	bin.Colours = make([]Colour, bin.ColourCount)
 
 	for i := range bin.Colours {
-		bin.Read(&bin.Colours[i].MeanReadLength)
+		bin.read(&bin.Colours[i].MeanReadLength)
 	}
 
 	for i := range bin.Colours {
-		bin.Read(&bin.Colours[i].TotalSequenceLength)
+		bin.read(&bin.Colours[i].TotalSequenceLength)
 	}
 
 	for i := range bin.Colours {
 		// How many bytes should we read before the next name?
 		var nameLength uint32
-		bin.Read(&nameLength)
+		bin.read(&nameLength)
 		bin.extraBytes += nameLength
 		// If we see a really long name, it probably means the
 		// file is corrupt.
@@ -115,7 +115,7 @@ func (bin *CortexVarBinary) readHeader() error {
 		//   and a char to read each byte into
 		var c byte
 		for j := uint32(0); j < nameLength; j++ {
-			bin.Read(&c)
+			bin.read(&c)
 			// We're not interested in adding zero bytes
 			if c > 0 {
 				b.WriteByte(c)
@@ -128,25 +128,25 @@ func (bin *CortexVarBinary) readHeader() error {
 	// For the moment, the error values are just stored. Perhaps
 	// they should be stored as a custom type with methods?
 	for i := range bin.Colours {
-		bin.Read(&bin.Colours[i].ErrorRate)
+		bin.read(&bin.Colours[i].ErrorRate)
 	}
 
 	var tmpByte byte
 	var nameLength uint32
 	for i := range bin.Colours {
 		colour := bin.Colours[i]
-		bin.Read(&tmpByte)
+		bin.read(&tmpByte)
 		colour.TopClippingPerformed = tmpByte == 0x1
-		bin.Read(&tmpByte)
+		bin.read(&tmpByte)
 		colour.LowCovSupernodesRemoved = tmpByte == 0x1
-		bin.Read(&tmpByte)
+		bin.read(&tmpByte)
 		colour.LowCovKmersRevoved = tmpByte == 0x1
-		bin.Read(&tmpByte)
+		bin.read(&tmpByte)
 		colour.WasCleanedAgainstGraph = tmpByte == 0x1
-		bin.Read(&colour.LowCovSupernodesThreshold)
-		bin.Read(&colour.LowCovKmersThreshold)
+		bin.read(&colour.LowCovSupernodesThreshold)
+		bin.read(&colour.LowCovKmersThreshold)
 
-		bin.Read(&nameLength)
+		bin.read(&nameLength)
 		bin.extraBytes += nameLength
 		// If we see a really long name, it probably means the
 		// file is corrupt.
@@ -156,7 +156,7 @@ func (bin *CortexVarBinary) readHeader() error {
 		var b bytes.Buffer
 		var c byte
 		for j := uint32(0); j < nameLength; j++ {
-			bin.Read(&c)
+			bin.read(&c)
 			if c > 0 {
 				b.WriteByte(c)
 			}
@@ -174,7 +174,7 @@ func (bin *CortexVarBinary) readHeader() error {
 
 func (bin *CortexVarBinary) hasMagicString() bool {
 	var magicString [6]byte
-	bin.Read(&magicString)
+	bin.read(&magicString)
 	if magicString != [6]byte{'C', 'O', 'R', 'T', 'E', 'X'} {
 		return false
 	}
