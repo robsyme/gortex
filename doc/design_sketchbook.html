@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Gortex Design Sketchbook</title>
+<!-- 2014-06-13 Fri 21:04 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Robert Syme" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Gortex Design Sketchbook</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Gortex</a>
+<ul>
+<li><a href="#sec-1-1">1.1. Storing Kmers Using big.Int</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Gortex</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+This is an outline of my thinking when writing the gortex scripts. I
+know that I'll probably have to change the name at some point.
+</p>
+</div>
+
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Storing Kmers Using big.Int</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+I want to be flexible in the size of kmers wer store to ensure we
+stay compatible with cortex-var (whose binary files we are reading).
+</p>
+
+<p>
+Each kmer will be stored in a bitstring, allowing two bits per base.
+Two bits per base allows us to store A, G, T and C. Having the space
+to store only four possible nucleotides does mean that we'll
+probably have to throw out kmers that include Ns. I may relax the
+requirement in the future but it would mean that we have to allow 3
+bits per base which might get expensive.
+</p>
+
+<p>
+The Go standard library includes the package <a href="http://golang.org/pkg/math/big/">big.Int</a> which is
+designed to store large multi-precision numbers. To store a large
+number, the package creates a slice of <a href="http://golang.org/pkg/math/big/#Word">Words</a> large enough to store
+the value. It includes many helpful funtions that operate across
+this slice of words, including bit-shifting operators <a href="http://golang.org/pkg/math/big/#Int.Lsh">Lsh</a> (left
+shift) and <a href="http://golang.org/pkg/math/big/#Int.Rsh">Rsh</a> (right shift).
+</p>
+
+<p>
+To store our Kmers in these word slices, we encode each base in two
+bits like so:
+</p>
+
+
+<div class="figure">
+<p><img src="img/2bit_binary_encoding.svg" alt="2bit_binary_encoding.svg" width="10%" />
+</p>
+</div>
+
+<p>
+We have two options for how we store the nucleotides. The examples
+here are using 32-bit words to that the figure is readable, but
+most systems will be using 64-bit words. Let's consider storing the
+4-mer 'ACGT'.
+</p>
+
+
+<div class="figure">
+<p><img src="img/endianness.svg" alt="endianness.svg" width="80%" />
+</p>
+</div>
+
+<p>
+The cortex-var program stores its kmer values as little-endian word
+slices in the style of option #2, so I think that it's best we
+follow suit. It also makes it easier to store small kmers as small
+values, which makes some debugging and development easier.
+</p>
+
+<p>
+We're working with coloured graphs, so each kmer needs to store not
+only the nucleotides that it represents, but also how many times it
+was seen for each colour. Cortex-var also helpfully calculates the
+incoming and outgoing endges for each colour too, so we'll store
+that.
+</p>
+
+<p>
+To store the coverage value, we're likely to need more than an
+8-bit uint (max value 255), so we'll use a uint32 (maximum coverage
+value of 4,294,967,295 - plenty).
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Robert Syme</p>
+<p class="date">Created: 2014-06-13 Fri 21:04</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.6)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
