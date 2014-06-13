@@ -1,5 +1,4 @@
 *.test
 #*#
 /#gortex.go#
-/cortex/cortex.go~
-/cortex/cortex_test.go~
+*~
