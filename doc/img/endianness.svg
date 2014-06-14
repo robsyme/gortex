@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="594.81873"
+   height="217.04071"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="endianness.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mend"
+       style="overflow:visible">
+      <path
+         id="path3830"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible">
+      <path
+         id="path3824"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="383.05334"
+     inkscape:cy="59.430571"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1440"
+     inkscape:window-height="659"
+     inkscape:window-x="273"
+     inkscape:window-y="222"
+     inkscape:window-maximized="0"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(200.50144,-424.92449)">
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Light"
+       x="35.237263"
+       y="440.44449"
+       id="text3013"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3015"
+         x="35.237263"
+         y="440.44449"
+         style="text-align:end;text-anchor:end">Empty 32-bit word:</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3014"
+       y="440.44449"
+       x="75.237267"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Light"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+         y="440.44449"
+         x="75.237267"
+         id="tspan3016"
+         sodipodi:role="line">00000000000000000000000000000000</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3018"
+       y="506.44452"
+       x="35.237263"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Light"
+       xml:space="preserve"><tspan
+         style="text-align:end;text-anchor:end"
+         y="506.44452"
+         x="35.237263"
+         id="tspan3020"
+         sodipodi:role="line">Little-endian:</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Light"
+       x="75.237267"
+       y="506.87305"
+       id="text3022"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3024"
+         x="75.237267"
+         y="506.87305"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono">000000000000000000000000<tspan
+   style="fill:#7137c8"
+   id="tspan3138">11</tspan><tspan
+   style="fill:#00aa88"
+   id="tspan3136">10</tspan><tspan
+   style="fill:#aad400"
+   id="tspan3134">01</tspan><tspan
+   style="fill:#ff6600"
+   id="tspan3132">00</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Light"
+       x="35.237263"
+       y="638.2052"
+       id="text3026"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3028"
+         x="35.237263"
+         y="638.2052"
+         style="text-align:end;text-anchor:end">Big-endian:</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3030"
+       y="638.2052"
+       x="75.237267"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Light"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+         y="638.2052"
+         x="75.237267"
+         id="tspan3032"
+         sodipodi:role="line"><tspan
+   style="fill:#ff6600"
+   id="tspan3098">00</tspan><tspan
+   style="fill:#aad400"
+   id="tspan3102">01</tspan><tspan
+   style="fill:#00aa88"
+   id="tspan3108">10</tspan><tspan
+   style="fill:#7137c8"
+   id="tspan3114">11</tspan>000000000000000000000000</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff6600;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Light"
+       x="80.245354"
+       y="621.06232"
+       id="text3082"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3084"
+         x="80.245354"
+         y="621.06232"
+         style="fill:#ff6600;font-family:Ubuntu mono;-inkscape-font-specification:Ubuntu mono">A</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3086"
+       y="621.06232"
+       x="101.85249"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Light"
+       xml:space="preserve"><tspan
+         style="fill:#aad400;font-family:Ubuntu mono;-inkscape-font-specification:Ubuntu mono"
+         y="621.06232"
+         x="101.85249"
+         id="tspan3088"
+         sodipodi:role="line">C</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Light"
+       x="122.03107"
+       y="621.06232"
+       id="text3090"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3092"
+         x="122.03107"
+         y="621.06232"
+         style="fill:#00aa88;font-family:Ubuntu mono;-inkscape-font-specification:Ubuntu mono">G</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3094"
+       y="621.06232"
+       x="138.99535"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Light"
+       xml:space="preserve"><tspan
+         style="fill:#7137c8;font-family:Ubuntu mono;-inkscape-font-specification:Ubuntu mono"
+         y="621.06232"
+         x="138.99535"
+         id="tspan3096"
+         sodipodi:role="line">T</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3116"
+       y="491.25644"
+       x="379.75555"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff6600;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Light"
+       xml:space="preserve"><tspan
+         style="fill:#ff6600;font-family:Ubuntu mono;-inkscape-font-specification:Ubuntu mono"
+         y="491.25644"
+         x="379.75555"
+         id="tspan3118"
+         sodipodi:role="line">A</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Light"
+       x="360.0513"
+       y="490.99643"
+       id="text3120"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3122"
+         x="360.0513"
+         y="490.99643"
+         style="fill:#aad400;font-family:Ubuntu mono;-inkscape-font-specification:Ubuntu mono">C</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3124"
+       y="490.99643"
+       x="340.45703"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Light"
+       xml:space="preserve"><tspan
+         style="fill:#00aa88;font-family:Ubuntu mono;-inkscape-font-specification:Ubuntu mono"
+         y="490.99643"
+         x="340.45703"
+         id="tspan3126"
+         sodipodi:role="line">G</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Light"
+       x="320.82278"
+       y="491.25644"
+       id="text3128"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3130"
+         x="320.82278"
+         y="491.25644"
+         style="fill:#7137c8;font-family:Ubuntu mono;-inkscape-font-specification:Ubuntu mono">T</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Light"
+       x="-102.61988"
+       y="506.44452"
+       id="text3140"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3142"
+         x="-102.61988"
+         y="506.44452"
+         style="font-weight:bold;text-align:end;text-anchor:end">Option #1</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3148"
+       y="638.2052"
+       x="-104.89988"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Light"
+       xml:space="preserve"><tspan
+         style="font-weight:bold;text-align:end;text-anchor:end"
+         y="638.2052"
+         x="-104.89988"
+         id="tspan3150"
+         sodipodi:role="line">Option #3</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Light"
+       x="35.237263"
+       y="573.35968"
+       id="text3027"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3029"
+         x="35.237263"
+         y="573.35968"
+         style="text-align:end;text-anchor:end">Little-endian:</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3059"
+       y="573.35968"
+       x="-102.61988"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Light"
+       xml:space="preserve"><tspan
+         style="font-weight:bold;text-align:end;text-anchor:end"
+         y="573.35968"
+         x="-102.61988"
+         id="tspan3061"
+         sodipodi:role="line">Option #2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Light"
+       x="75.237267"
+       y="572.13379"
+       id="text3063"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3065"
+         x="75.237267"
+         y="572.13379"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono">000000000000000000000000<tspan
+   id="tspan3067"
+   style="fill:#ff6600">00</tspan><tspan
+   id="tspan3069"
+   style="fill:#aad400">01</tspan><tspan
+   id="tspan3071"
+   style="fill:#00aa88">10</tspan><tspan
+   id="tspan3073"
+   style="fill:#7137c8">11</tspan></tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3079"
+       y="554.99091"
+       x="320.95966"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff6600;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Light"
+       xml:space="preserve"><tspan
+         style="fill:#ff6600;font-family:Ubuntu mono;-inkscape-font-specification:Ubuntu mono"
+         y="554.99091"
+         x="320.95966"
+         id="tspan3081"
+         sodipodi:role="line">A</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Light"
+       x="342.56677"
+       y="554.99091"
+       id="text3083"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3085"
+         x="342.56677"
+         y="554.99091"
+         style="fill:#aad400;font-family:Ubuntu mono;-inkscape-font-specification:Ubuntu mono">C</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3087"
+       y="554.99091"
+       x="362.74536"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Light"
+       xml:space="preserve"><tspan
+         style="fill:#00aa88;font-family:Ubuntu mono;-inkscape-font-specification:Ubuntu mono"
+         y="554.99091"
+         x="362.74536"
+         id="tspan3089"
+         sodipodi:role="line">G</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Light"
+       x="379.70963"
+       y="554.99091"
+       id="text3091"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3093"
+         x="379.70963"
+         y="554.99091"
+         style="fill:#7137c8;font-family:Ubuntu mono;-inkscape-font-specification:Ubuntu mono">T</tspan></text>
+  </g>
+</svg>

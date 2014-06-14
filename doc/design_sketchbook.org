@@ -1,0 +1,53 @@
+#+TITLE: Gortex Design Sketchbook
+* Gortex
+
+  This is an outline of my thinking when writing the gortex scripts. I
+  know that I'll probably have to change the name at some point.
+
+** Storing Kmers Using big.Int
+
+   I want to be flexible in the size of kmers wer store to ensure we
+   stay compatible with cortex-var (whose binary files we are reading).
+
+   Each kmer will be stored in a bitstring, allowing two bits per base.
+   Two bits per base allows us to store A, G, T and C. Having the space
+   to store only four possible nucleotides does mean that we'll
+   probably have to throw out kmers that include Ns. I may relax the
+   requirement in the future but it would mean that we have to allow 3
+   bits per base which might get expensive.
+
+   The Go standard library includes the package [[http://golang.org/pkg/math/big/][big.Int]] which is
+   designed to store large multi-precision numbers. To store a large
+   number, the package creates a slice of [[http://golang.org/pkg/math/big/#Word][Words]] large enough to store
+   the value. It includes many helpful funtions that operate across
+   this slice of words, including bit-shifting operators [[http://golang.org/pkg/math/big/#Int.Lsh][Lsh]] (left
+   shift) and [[http://golang.org/pkg/math/big/#Int.Rsh][Rsh]] (right shift).
+
+   To store our Kmers in these word slices, we encode each base in two
+   bits like so:
+
+   #+ATTR_HTML: :width 10%
+   [[file:img/2bit_binary_encoding.svg]]
+
+   We have two options for how we store the nucleotides. The examples
+   here are using 32-bit words to that the figure is readable, but
+   most systems will be using 64-bit words. Let's consider storing the
+   4-mer 'ACGT'.
+
+   #+ATTR_HTML: :width 80%
+   [[file:img/endianness.svg]]
+
+   The cortex-var program stores its kmer values as little-endian word
+   slices in the style of option #2, so I think that it's best we
+   follow suit. It also makes it easier to store small kmers as small
+   values, which makes some debugging and development easier.
+
+   We're working with coloured graphs, so each kmer needs to store not
+   only the nucleotides that it represents, but also how many times it
+   was seen for each colour. Cortex-var also helpfully calculates the
+   incoming and outgoing endges for each colour too, so we'll store
+   that.
+
+   To store the coverage value, we're likely to need more than an
+   8-bit uint (max value 255), so we'll use a uint32 (maximum coverage
+   value of 4,294,967,295 - plenty).
