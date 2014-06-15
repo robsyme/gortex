@@ -188,6 +188,7 @@ func (bin *CortexVarBinary) Close() {
 func (bin *CortexVarBinary) writeForSorting() {
 	//TODO: Write file that can be sorted in colex order. Hints
 	//are at http://alexbowe.com/succinct-debruijn-graphs/
+
 }
 
 func Open(filename string) (binary CortexVarBinary, err error) {

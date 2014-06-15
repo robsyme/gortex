@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="graphs.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mend"
+       style="overflow:visible;">
+      <path
+         id="path3828"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="307.25095"
+     inkscape:cy="194.66941"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1138"
+     inkscape:window-height="804"
+     inkscape:window-x="625"
+     inkscape:window-y="86"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g3027"
+       transform="translate(28.430066,0.00976563)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text2985"
+         y="409.90515"
+         x="186.87311"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="409.90515"
+           x="186.87311"
+           id="tspan2987"
+           sodipodi:role="line">AATG</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="186.87311"
+         y="442.7623"
+         id="text2989"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan2991"
+           x="186.87311"
+           y="442.7623"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">TTAC</tspan></text>
+    </g>
+    <g
+       id="g3033"
+       transform="translate(42.303755,-47.47717)">
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="346.87314"
+         y="409.90515"
+         id="text2993"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan2995"
+           x="346.87314"
+           y="409.90515"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">ATGT</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text2997"
+         y="442.7623"
+         x="346.87314"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="442.7623"
+           x="346.87314"
+           id="tspan2999"
+           sodipodi:role="line">TACA</tspan></text>
+    </g>
+    <g
+       id="g3039"
+       transform="translate(41.428571,-47.47717)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text3001"
+         y="409.90515"
+         x="523.3017"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="409.90515"
+           x="523.3017"
+           id="tspan3003"
+           sodipodi:role="line">TGTT</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="523.3017"
+         y="442.7623"
+         id="text3005"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3007"
+           x="523.3017"
+           y="442.7623"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">ACAA</tspan></text>
+    </g>
+    <g
+       id="g3021"
+       transform="translate(41.428571,0)">
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="-1.6983237"
+         y="409.90515"
+         id="text3009"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3011"
+           x="-1.6983237"
+           y="409.90515"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">TAAT</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3013"
+         y="442.7623"
+         x="-1.6983237"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="442.7623"
+           x="-1.6983237"
+           id="tspan3015"
+           sodipodi:role="line">ATTA</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="15.714286"
+       y="445.93362"
+       id="text3017"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3019"></tspan></text>
+    <g
+       id="g4320"
+       transform="translate(35.304312,0.4881134)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3045"
+         d="m 109.45877,398.07647 60.71428,0"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3009-8"
+         y="394.10742"
+         x="134.19481"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="394.10742"
+           x="134.19481"
+           id="tspan3011-3"
+           sodipodi:role="line">G</tspan></text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+         d="m 170.92305,426.36074 -60.71428,0"
+         id="path4280"
+         inkscape:connector-curvature="0" />
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="134.19481"
+         y="444.61505"
+         id="text4282"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4284"
+           x="134.19481"
+           y="444.61505"
+           style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">A</tspan></text>
+    </g>
+    <g
+       id="g4298"
+       transform="translate(33.411483,-3.5355339)">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+         d="m 285.22531,398.07647 60.71428,-46.97209"
+         id="path4286"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc" />
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="302.38522"
+         y="374.40945"
+         id="text4288"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4290"
+           x="302.38522"
+           y="374.40945"
+           style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">T</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path4292"
+         d="m 346.68959,379.38865 -60.71428,46.97209"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+         sodipodi:nodetypes="cc" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4294"
+         y="410.34601"
+         x="327.35367"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="410.34601"
+           x="327.35367"
+           id="tspan4296"
+           sodipodi:role="line">T</tspan></text>
+    </g>
+    <g
+       id="g4306"
+       transform="translate(208.96489,-47.101361)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4308"
+         d="m 285.22531,398.07647 60.71428,0"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4310"
+         y="394.10742"
+         x="309.96136"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="394.10742"
+           x="309.96136"
+           id="tspan4312"
+           sodipodi:role="line">T</tspan></text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+         d="m 346.68959,426.36074 -60.71428,0"
+         id="path4314"
+         inkscape:connector-curvature="0" />
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="309.96136"
+         y="444.61505"
+         id="text4316"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4318"
+           x="309.96136"
+           y="444.61505"
+           style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">T</tspan></text>
+    </g>
+    <g
+       transform="translate(42.303755,65.721462)"
+       id="g4328">
+      <text
+         sodipodi:linespacing="125%"
+         id="text4330"
+         y="409.90515"
+         x="346.87314"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="409.90515"
+           x="346.87314"
+           id="tspan4332"
+           sodipodi:role="line">ATGA</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="346.87314"
+         y="442.7623"
+         id="text4334"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4336"
+           x="346.87314"
+           y="442.7623"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">TACT</tspan></text>
+    </g>
+    <g
+       transform="translate(33.411483,2.5253817)"
+       id="g4380">
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path4382"
+         d="m 285.22531,398.07647 60.71428,59.599"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4384"
+         y="437.30502"
+         x="329.69089"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="437.30502"
+           x="329.69089"
+           id="tspan4386"
+           sodipodi:role="line">A</tspan></text>
+      <path
+         sodipodi:nodetypes="cc"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+         d="m 346.68959,485.95974 -60.71428,-59.599"
+         id="path4388"
+         inkscape:connector-curvature="0" />
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="302.71698"
+         y="470.2619"
+         id="text4390"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4392"
+           x="302.71698"
+           y="470.2619"
+           style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">T</tspan></text>
+    </g>
+    <g
+       transform="translate(41.428571,65.721462)"
+       id="g4394">
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="523.3017"
+         y="409.90515"
+         id="text4396"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4398"
+           x="523.3017"
+           y="409.90515"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">TGAA</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text4400"
+         y="442.7623"
+         x="523.3017"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="442.7623"
+           x="523.3017"
+           id="tspan4402"
+           sodipodi:role="line">ACTT</tspan></text>
+    </g>
+    <g
+       transform="translate(208.96489,66.097271)"
+       id="g4404">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+         d="m 285.22531,398.07647 60.71428,0"
+         id="path4406"
+         inkscape:connector-curvature="0" />
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="309.96136"
+         y="394.10742"
+         id="text4408"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4410"
+           x="309.96136"
+           y="394.10742"
+           style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">A</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path4412"
+         d="m 346.68959,426.36074 -60.71428,0"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4414"
+         y="444.61505"
+         x="309.96136"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+           y="444.61505"
+           x="309.96136"
+           id="tspan4416"
+           sodipodi:role="line">T</tspan></text>
+    </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4552"
+       y="375.35693"
+       x="214.83443"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+         y="375.35693"
+         x="214.83443"
+         id="tspan4554"
+         sodipodi:role="line"><tspan
+   style="fill:#b3b3b3"
+   id="tspan4556">AC</tspan>G<tspan
+   style="fill:#b3b3b3"
+   id="tspan4558">T</tspan>A<tspan
+   style="fill:#b3b3b3"
+   id="tspan4560">CG</tspan>T</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="40.111107"
+       y="461.07123"
+       id="text4562"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4564"
+         x="40.111107"
+         y="461.07123"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#b3b3b3;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"><tspan
+   style="fill:#000000"
+   id="tspan4582">A</tspan>CGTACGT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="389.54797"
+       y="329.90005"
+       id="text4584"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4586"
+         x="389.54797"
+         y="329.90005"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono;fill:#b3b3b3">ACG<tspan
+   style="fill:#000000"
+   id="tspan4594">T</tspan>ACG<tspan
+   style="fill:#000000"
+   id="tspan4596">T</tspan></tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4598"
+       y="329.90005"
+       x="565.11115"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#b3b3b3;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+         y="329.90005"
+         x="565.11115"
+         id="tspan4600"
+         sodipodi:role="line">ACG<tspan
+   id="tspan4602"
+   style="fill:#000000">T</tspan>ACGT</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4606"
+       y="444.55237"
+       x="389.55774"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#b3b3b3;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+         y="444.55237"
+         x="389.55774"
+         id="tspan4608"
+         sodipodi:role="line"><tspan
+   style="fill:#000000"
+   id="tspan4622">A</tspan>CGT<tspan
+   style="fill:#000000"
+   id="tspan4624">A</tspan>CGT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="565.11115"
+       y="444.55237"
+       id="text4614"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4616"
+         x="565.11115"
+         y="444.55237"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#b3b3b3;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"><tspan
+   style="fill:#000000"
+   id="tspan4628">A</tspan>CGTACGT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#803300;fill-opacity:1;stroke:none;font-family:Sans"
+       x="2.5873902"
+       y="718.00171"
+       id="text4632"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4634"
+         x="2.5873902"
+         y="718.00171"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#803300;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">TAC</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4636"
+       y="750.85883"
+       x="2.5873902"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+         y="750.85883"
+         x="2.5873902"
+         id="tspan4638"
+         sodipodi:role="line">GTA</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4642"
+       y="718.00171"
+       x="145.5809"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#803300;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#803300;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+         y="718.00171"
+         x="145.5809"
+         id="tspan4644"
+         sodipodi:role="line">ACG</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="145.5809"
+       y="750.85883"
+       id="text4646"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4648"
+         x="145.5809"
+         y="750.85883"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">CGT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#803300;fill-opacity:1;stroke:none;font-family:Sans"
+       x="291.29517"
+       y="718.00171"
+       id="text4671"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4673"
+         x="291.29517"
+         y="718.00171"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono;fill:#803300">GAC</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4675"
+       y="750.85883"
+       x="291.29517"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+         y="750.85883"
+         x="291.29517"
+         id="tspan4677"
+         sodipodi:role="line">GTC</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4681"
+       y="718.00171"
+       x="427.00946"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#803300;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono;fill:#803300"
+         y="718.00171"
+         x="427.00946"
+         id="tspan4683"
+         sodipodi:role="line">ATC</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="427.00946"
+       y="750.85883"
+       id="text4685"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4687"
+         x="427.00946"
+         y="750.85883"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">GAC</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#803300;fill-opacity:1;stroke:none;font-family:Sans"
+       x="145.5809"
+       y="839.43024"
+       id="text4691"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4693"
+         x="145.5809"
+         y="839.43024"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono;fill:#803300">CGT</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4695"
+       y="872.28741"
+       x="145.5809"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+         y="872.28741"
+         x="145.5809"
+         id="tspan4697"
+         sodipodi:role="line">ACG</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4701"
+       y="839.43024"
+       x="291.29517"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#803300;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono;fill:#803300"
+         y="839.43024"
+         x="291.29517"
+         id="tspan4703"
+         sodipodi:role="line">CGA</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="291.29517"
+       y="872.28741"
+       id="text4705"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4707"
+         x="291.29517"
+         y="872.28741"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">TCG</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4711"
+       y="970.85883"
+       x="145.5809"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#803300;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono;fill:#803300"
+         y="970.85883"
+         x="145.5809"
+         id="tspan4713"
+         sodipodi:role="line">GTC</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="145.5809"
+       y="1003.7159"
+       id="text4715"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4717"
+         x="145.5809"
+         y="1003.7159"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">GAC</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#803300;fill-opacity:1;stroke:none;font-family:Sans"
+       x="291.29517"
+       y="970.85883"
+       id="text4721"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4723"
+         x="291.29517"
+         y="970.85883"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono;fill:#803300">TCG</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4725"
+       y="1003.7159"
+       x="291.29517"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+         y="1003.7159"
+         x="291.29517"
+         id="tspan4727"
+         sodipodi:role="line">CGA</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
+       d="m 81.428571,703.79075 52.857139,0"
+       id="path4729"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="95.598572"
+       y="696.75348"
+       id="text4642-0"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4644-6"
+         x="95.598572"
+         y="696.75348"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">G</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path4941"
+       d="m 281.24768,703.79075 -52.85714,0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4943"
+       y="696.75348"
+       x="252.67731"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+         y="696.75348"
+         x="252.67731"
+         id="tspan4945"
+         sodipodi:role="line">G</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path4949"
+       d="m 369.32205,703.79075 52.85714,0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4951"
+       y="696.75348"
+       x="385.51236"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+         y="696.75348"
+         x="385.51236"
+         id="tspan4953"
+         sodipodi:role="line">T</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path4957"
+       d="m 220,714.50504 66.42857,95.71428"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4959"
+       y="754.61066"
+       x="252.66965"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+         y="754.61066"
+         x="252.66965"
+         id="tspan4961"
+         sodipodi:role="line">A</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path4965"
+       d="m 175.03394,758.79836 0,46.78571"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4967"
+       y="784.98242"
+       x="179.84662"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+         y="784.98242"
+         x="179.84662"
+         id="tspan4969"
+         sodipodi:role="line">T</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
+       d="m 175.03394,886.07758 0,46.78571"
+       id="path4973"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="179.84662"
+       y="912.2616"
+       id="text4975"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4977"
+         x="179.84662"
+         y="912.2616"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">C</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path4981"
+       d="m 226.89054,961.88473 52.85714,0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4983"
+       y="954.84747"
+       x="242.06018"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+         y="954.84747"
+         x="242.06018"
+         id="tspan4985"
+         sodipodi:role="line">G</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path4989"
+       d="m 333.79038,934.36325 0,-46.78571"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4991"
+       y="921.36279"
+       x="316.72186"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+         y="921.36279"
+         x="316.72186"
+         id="tspan4993"
+         sodipodi:role="line">A</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
+       d="m 333.23862,804.36325 0,-46.78571"
+       id="path4997"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="316.17007"
+       y="791.36279"
+       id="text4999"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5001"
+         x="316.17007"
+         y="791.36279"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono">C</tspan></text>
+  </g>
+</svg>
