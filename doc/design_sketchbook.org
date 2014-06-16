@@ -95,4 +95,5 @@
    #+ATTR_HTML: :width 50%
    [[file:img/demo_sequence_combined_graph_with_tables.svg]]
 
-   
+   #+ATTR_HTML: :width 50%
+   [[file:img/gif/basic_traversal.gif]]
