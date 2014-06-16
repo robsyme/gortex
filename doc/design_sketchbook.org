@@ -51,3 +51,15 @@
    To store the coverage value, we're likely to need more than an
    8-bit uint (max value 255), so we'll use a uint32 (maximum coverage
    value of 4,294,967,295 - plenty).
+
+** Strandedness
+
+   DNA strandedness presents a significant problem. Let's consider
+   representing the sequence "TACGACGTCGACT", represented below with
+   both strands.
+
+   #+ATTR_HTML: :width 80%
+   [[file:img/demo_sequence_twostrands.svg]]
+
+   Each kmer has up to two possible representations (the forward and
+   reverse strand.
