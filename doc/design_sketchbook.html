@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Gortex Design Sketchbook</title>
-<!-- 2014-06-16 Mon 11:34 -->
+<!-- 2014-06-16 Mon 17:58 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Robert Syme" />
@@ -238,12 +238,71 @@ value of 4,294,967,295 - plenty).
 <div class="outline-text-3" id="text-1-2">
 <p>
 DNA strandedness presents a significant problem. Let's consider
-representing the sequence "TACGACGTCGACT":
+representing the sequence "TACGACGTCGACT", represented below with
+both strands.
 </p>
 
 
 <div class="figure">
-<p><img src="img/demo_sequence_twostrands.svg" alt="demo_sequence_twostrands.svg" width="80%" />
+<p><img src="img/demo_sequence_onestrand.svg" alt="demo_sequence_onestrand.svg" width="60%" />
+</p>
+</div>
+
+<p>
+Each kmer has up to two possible representations (the forward and
+reverse strand.
+</p>
+
+<p>
+I think that we will have to store both strands in the one graph.
+This is a bit of a pain becaus it almost doubles the size of the
+graph instantly. Even with the doubling, the compression probably
+makes it worthwhile.
+</p>
+
+<p>
+Let's say we have the graph from the sequence above. I've prepended
+the '$' symbol so that the whole sequence is represented in an
+edge. Note that only the last character in the edge is shown.
+</p>
+
+
+<div class="figure">
+<p><img src="img/demo_sequence_forward_graph.svg" alt="demo_sequence_forward_graph.svg" width="50%" />
+</p>
+</div>
+
+<p>
+Let's not forget that this sequence also has a reverse-complement
+and we can construct a graph for this sequence also.
+</p>
+
+
+<div class="figure">
+<p><img src="img/demo_sequence_reverse_graph.svg" alt="demo_sequence_reverse_graph.svg" width="50%" />
+</p>
+</div>
+
+<p>
+We can combine these to get the graph below. Note that I've removed
+the edge labels for clarity.
+</p>
+
+
+<div class="figure">
+<p><img src="img/demo_sequence_combined_graph.svg" alt="demo_sequence_combined_graph.svg" width="50%" />
+</p>
+</div>
+
+<p>
+From here, we can construct the BWT-inspired compressed
+representation. For an introduction to this method, see <a href="http://alexbowe.com/succinct-debruijn-graphs">Alex Bowe's
+excellent blog post</a> on the subject.
+</p>
+
+
+<div class="figure">
+<p><img src="img/demo_sequence_combined_graph_with_tables.svg" alt="demo_sequence_combined_graph_with_tables.svg" width="50%" />
 </p>
 </div>
 </div>
@@ -252,7 +311,7 @@ representing the sequence "TACGACGTCGACT":
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Robert Syme</p>
-<p class="date">Created: 2014-06-16 Mon 11:34</p>
+<p class="date">Created: 2014-06-16 Mon 17:58</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.6)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>

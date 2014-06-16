@@ -58,8 +58,41 @@
    representing the sequence "TACGACGTCGACT", represented below with
    both strands.
 
-   #+ATTR_HTML: :width 80%
-   [[file:img/demo_sequence_twostrands.svg]]
+   #+ATTR_HTML: :width 60%
+   [[file:img/demo_sequence_onestrand.svg]]
 
    Each kmer has up to two possible representations (the forward and
    reverse strand.
+
+   I think that we will have to store both strands in the one graph.
+   This is a bit of a pain becaus it almost doubles the size of the
+   graph instantly. Even with the doubling, the compression probably
+   makes it worthwhile.
+
+   Let's say we have the graph from the sequence above. I've prepended
+   the '$' symbol so that the whole sequence is represented in an
+   edge. Note that only the last character in the edge is shown.
+
+   #+ATTR_HTML: :width 50%
+   [[file:img/demo_sequence_forward_graph.svg]]
+
+   Let's not forget that this sequence also has a reverse-complement
+   and we can construct a graph for this sequence also.
+
+   #+ATTR_HTML: :width 50%
+   [[file:img/demo_sequence_reverse_graph.svg]]
+
+   We can combine these to get the graph below. Note that I've removed
+   the edge labels for clarity.
+
+   #+ATTR_HTML: :width 50%
+   [[file:img/demo_sequence_combined_graph.svg]]
+
+   From here, we can construct the BWT-inspired compressed
+   representation. For an introduction to this method, see [[http://alexbowe.com/succinct-debruijn-graphs][Alex Bowe's
+   excellent blog post]] on the subject.
+   
+   #+ATTR_HTML: :width 50%
+   [[file:img/demo_sequence_combined_graph_with_tables.svg]]
+
+   

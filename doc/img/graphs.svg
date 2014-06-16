@@ -238,8 +238,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497475"
-     inkscape:cx="7298.9383"
-     inkscape:cy="-623.20517"
+     inkscape:cx="5004.662"
+     inkscape:cy="-906.41803"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -1638,7 +1638,7 @@
          sodipodi:role="line">Reverse Strand</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#44aa00;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
        x="1597.308"
        y="668.5835"
        id="text4131"
@@ -1647,7 +1647,7 @@
          id="tspan4133"
          x="1597.308"
          y="668.5835"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#44aa00;font-family:Liberation;-inkscape-font-specification:Liberation">Forward Strand</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;font-family:Liberation;-inkscape-font-specification:Liberation">Forward Strand</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
        d="m 255.66081,679.1584 -52.8572,0"
@@ -9428,5 +9428,17 @@
            y="1868.7394"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono;fill:#cccccc">A</tspan></text>
     </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4630"
+       y="248.68501"
+       x="193.82521"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;font-family:Liberation Mono;-inkscape-font-specification:Liberation Mono"
+         y="248.68501"
+         x="193.82521"
+         id="tspan4632"
+         sodipodi:role="line">TACGACGTCGACT</tspan></text>
   </g>
 </svg>
